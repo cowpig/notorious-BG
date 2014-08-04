@@ -1,0 +1,279 @@
+/* config.h.in.  Generated from configure.ac by autoheader.  */
+
+/* Define if you want to disable the SIMD CPU instruction test */
+#undef DISABLE_SIMD_TEST
+
+/* always defined to indicate that i18n is enabled */
+#undef ENABLE_NLS
+
+/* The package name, for gettext */
+#undef GETTEXT_PACKAGE
+
+/* Define if you wish to use glib threads */
+#undef GLIB_THREADS
+
+/* Define if you want to disable deprecated gtk functions */
+#undef GTK_DISABLE_DEPRECATED
+
+/* Define if you want to disable deprecated glib functions */
+#undef G_DISABLE_DEPRECATED
+
+/* Support Altivec instructions */
+#undef HAVE_ALTIVEC
+
+/* Define if you have Apple CoreAudio */
+#undef HAVE_APPLE_COREAUDIO
+
+/* Define if you have Apple QuickTime */
+#undef HAVE_APPLE_QUICKTIME
+
+/* Support AVX (Advanced Vector Extensions) instructions */
+#undef HAVE_AVX
+
+/* Define to 1 if you have the `bind_textdomain_codeset' function. */
+#undef HAVE_BIND_TEXTDOMAIN_CODESET
+
+/* Define if you want to use libcairo */
+#undef HAVE_CAIRO
+
+/* Define if you want to use gstreamer */
+#undef HAVE_CANBERRA
+
+/* Define to 1 if you have the `dcgettext' function. */
+#undef HAVE_DCGETTEXT
+
+/* Define to 1 if you have the declaration of `signbit', and to 0 if you
+   don't. */
+#undef HAVE_DECL_SIGNBIT
+
+/* Define to 1 if you have the <dlfcn.h> header file. */
+#undef HAVE_DLFCN_H
+
+/* Define if you have freetype2 */
+#undef HAVE_FREETYPE
+
+/* Define if the GNU gettext() function is already present or preinstalled. */
+#undef HAVE_GETTEXT
+
+/* Define to 1 if you have the <GL/glx.h> header file. */
+#undef HAVE_GL_GLX_H
+
+/* Define to 1 if you have the <inttypes.h> header file. */
+#undef HAVE_INTTYPES_H
+
+/* Define if your <locale.h> file defines LC_MESSAGES. */
+#undef HAVE_LC_MESSAGES
+
+/* Define to 1 if you have the `gmp' library (-lgmp). */
+#undef HAVE_LIBGMP
+
+/* Define to 1 if you have the `m' library (-lm). */
+#undef HAVE_LIBM
+
+/* Define if you have libpng */
+#undef HAVE_LIBPNG
+
+/* Define if you have libreadline */
+#undef HAVE_LIBREADLINE
+
+/* Define to 1 if you have the <locale.h> header file. */
+#undef HAVE_LOCALE_H
+
+/* Define to 1 if you have the <mcheck.h> header file. */
+#undef HAVE_MCHECK_H
+
+/* Define to 1 if you have the <memory.h> header file. */
+#undef HAVE_MEMORY_H
+
+/* Support mmx instructions */
+#undef HAVE_MMX
+
+/* Define to 1 if you have the `mtrace' function. */
+#undef HAVE_MTRACE
+
+/* Define if you want to use pangocairo */
+#undef HAVE_PANGOCAIRO
+
+/* Define to 1 if you have the `random' function. */
+#undef HAVE_RANDOM
+
+/* Define to 1 if you have the `setpriority' function. */
+#undef HAVE_SETPRIORITY
+
+/* Define to 1 if you have the `sigaction' function. */
+#undef HAVE_SIGACTION
+
+/* Define to 1 if you have the `sigvec' function. */
+#undef HAVE_SIGVEC
+
+/* Define if the system supports AF_LOCAL sockets. */
+#undef HAVE_SOCKETS
+
+/* Support SSE (Streaming SIMD Extensions) instructions */
+#undef HAVE_SSE
+
+/* Support SSE2 (Streaming SIMD Extensions 2) instructions */
+#undef HAVE_SSE2
+
+/* Support SSE3 (Streaming SIMD Extensions 3) instructions */
+#undef HAVE_SSE3
+
+/* Support SSSE4.1 (Streaming SIMD Extensions 4.1) instructions */
+#undef HAVE_SSE4_1
+
+/* Support SSSE4.2 (Streaming SIMD Extensions 4.2) instructions */
+#undef HAVE_SSE4_2
+
+/* Support SSSE3 (Supplemental Streaming SIMD Extensions 3) instructions */
+#undef HAVE_SSSE3
+
+/* Define to 1 if you have the <stdint.h> header file. */
+#undef HAVE_STDINT_H
+
+/* Define to 1 if you have the <stdlib.h> header file. */
+#undef HAVE_STDLIB_H
+
+/* Define to 1 if you have the <strings.h> header file. */
+#undef HAVE_STRINGS_H
+
+/* Define to 1 if you have the <string.h> header file. */
+#undef HAVE_STRING_H
+
+/* Define to 1 if you have the `strptime' function. */
+#undef HAVE_STRPTIME
+
+/* Define to 1 if you have the <sys/resource.h> header file. */
+#undef HAVE_SYS_RESOURCE_H
+
+/* Define to 1 if you have the <sys/socket.h> header file. */
+#undef HAVE_SYS_SOCKET_H
+
+/* Define to 1 if you have the <sys/stat.h> header file. */
+#undef HAVE_SYS_STAT_H
+
+/* Define to 1 if you have the <sys/time.h> header file. */
+#undef HAVE_SYS_TIME_H
+
+/* Define to 1 if you have the <sys/types.h> header file. */
+#undef HAVE_SYS_TYPES_H
+
+/* Define to 1 if you have the <unistd.h> header file. */
+#undef HAVE_UNISTD_H
+
+/* Define to the sub-directory in which libtool stores uninstalled libraries.
+   */
+#undef LT_OBJDIR
+
+/* maximum number of evaluation threads */
+#undef MAX_NUMTHREADS
+
+/* Define to 1 if your C compiler doesn't accept -c and -o together. */
+#undef NO_MINUS_C_MINUS_O
+
+/* Needed for now on recent Ubuntu releases */
+#undef NO_OVERLAYSCROLLBARS
+
+/* program to open URLs */
+#undef OPEN_URL_PROG
+
+/* Name of package */
+#undef PACKAGE
+
+/* Define to the address where bug reports for this package should be sent. */
+#undef PACKAGE_BUGREPORT
+
+/* Define to the full name of this package. */
+#undef PACKAGE_NAME
+
+/* Define to the full name and version of this package. */
+#undef PACKAGE_STRING
+
+/* Define to the one symbol short name of this package. */
+#undef PACKAGE_TARNAME
+
+/* Define to the home page for this package. */
+#undef PACKAGE_URL
+
+/* Define to the version of this package. */
+#undef PACKAGE_VERSION
+
+/* Define to 1 if you have the ANSI C header files. */
+#undef STDC_HEADERS
+
+/* Define if using Apple OpenGL */
+#undef USE_APPLE_OPENGL
+
+/* Define if you want to compile with AVX support */
+#undef USE_AVX
+
+/* Define if you want to use the 3d boards */
+#undef USE_BOARD3D
+
+/* Define if you want extended MatchID support */
+#undef USE_EXTENDEDMATCHID
+
+/* Define if you want to use the gtk gui */
+#undef USE_GTK
+
+/* Define if you want to have multithread support */
+#undef USE_MULTITHREAD
+
+/* Define if you want to use Python inside gnubg */
+#undef USE_PYTHON
+
+/* Define if you want to compile with SIMD support */
+#undef USE_SIMD_INSTRUCTIONS
+
+/* Define if you want to use sqlite */
+#undef USE_SQLITE
+
+/* Define if you want to compile with SSE2 support */
+#undef USE_SSE2
+
+/* Enable extensions on AIX 3, Interix.  */
+#ifndef _ALL_SOURCE
+# undef _ALL_SOURCE
+#endif
+/* Enable GNU extensions on systems that have them.  */
+#ifndef _GNU_SOURCE
+# undef _GNU_SOURCE
+#endif
+/* Enable threading extensions on Solaris.  */
+#ifndef _POSIX_PTHREAD_SEMANTICS
+# undef _POSIX_PTHREAD_SEMANTICS
+#endif
+/* Enable extensions on HP NonStop.  */
+#ifndef _TANDEM_SOURCE
+# undef _TANDEM_SOURCE
+#endif
+/* Enable general extensions on Solaris.  */
+#ifndef __EXTENSIONS__
+# undef __EXTENSIONS__
+#endif
+
+
+/* Version number of package */
+#undef VERSION
+
+/* Define to 1 if `lex' declares `yytext' as a `char *' by default, not a
+   `char[]'. */
+#undef YYTEXT_POINTER
+
+/* Define to 1 if on MINIX. */
+#undef _MINIX
+
+/* Define to 2 if the system does not provide POSIX.1 features except with
+   this defined. */
+#undef _POSIX_1_SOURCE
+
+/* Define to 1 if you need to in order for `stat' and other things to work. */
+#undef _POSIX_SOURCE
+
+/* Define to `__inline__' or `__inline' if that's what the C compiler
+   calls it, or to nothing if 'inline' is not supported under any name.  */
+#ifndef __cplusplus
+#undef inline
+#endif
+
+/* Define to `unsigned int' if <sys/types.h> does not define. */
+#undef size_t

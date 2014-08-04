@@ -1,0 +1,3 @@
+mt19937ar.lo: mt19937ar.c mt19937ar.h
+
+mt19937ar.h:
