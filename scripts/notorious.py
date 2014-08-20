@@ -11,9 +11,62 @@ def new(opponent_type="gnubg"):
 		gnubg.command("set player 0 gnubg")
 		gnubg.command("new session")
 
+
+#checks legality for a die value at a board location num given a board (assuming we are player 1)
+def get_moves_from_pos(movelist,board,dice,numdice,numpos):
+	# if we have reached the end of the board traversal, or if we have reached the end of our dice traversal
+	# then return to previous level of recursion
+	if numpos <= 0 or numdice > len(dice):
+		return movelist
+	else:
+		# if there are pips at this position
+		if board[1][numpos] != 0:
+			# can we take them off the board? (are all pieces in inner board)
+			canTakeOff=bool(not sum(board[1][7:24]))
+			if numpos - d <= 0:
+				# if yes and if we are trying to do that, take them off
+				# LATER: DISCARD MOVES THAT TAKE OFF BUT ARE NOT ALLOWED
+				if canTakeOff:
+					move = (numpos, numpos - d)
+					board[1][numpos] -= 1
+				# iterate forwards in dice but not position
+					movelist[move]=get_moves_from_pos(movelist[move],board,dice,numdice+1,24)
+				else:
+					return get_moves_from_pos(movelist,board,dice,numdice,numpos-1)
+			else:
+				# check no opponent blockage, if not, create move and update board
+				if board[0][24-(numpos - d)] < 2:
+					move = (numpos, numpos - d)
+					board[1][numpos] -= 1
+					board[1][numpos - d] += 1
+				movelist[move] = get_moves_from_pos(movelist[move],board,dice,numdice+1,24)
+		else:
+			#iterate through position if you can't make a move!
+			return get_moves_from_pos(movelist,board,dice,numdice,numpos-1)
+		
+
 def get_legal_moves():
-	# figure out if I can get this from gnubg, otherwise, TODO: implement it
-	moves = implement_me
+	# TODO: implement checking if piece is on bar, also if highest roll is not available
+	posinfo = gnubg.posinfo()
+	dice = posinfo['dice']
+	board = gnubg.board()
+	# check for doubles case
+	isDouble = dice[0] == dice[1]
+	#can the board take off pieces? (check after each move)
+	canTakeOff = bool(not sum(board[1][7:24]))
+
+	for i in range(board[1]):
+		num_position = board[1][i]
+		if num_position != 0:
+			for d in dice:
+				if is_legal(board,p,d):
+					move_one = 
+					return
+
+	if board[1][24] in player_positions != 0:
+		# bar stuff, implement
+
+	# if doubles, 24/1(3) (5/1)
 
 def random_move():
 	moves = get_legal_moves()
@@ -65,6 +118,7 @@ dir(gnubg):
 ]
 
 >>> gnubg.board()
+(2 = gnubg.board()[0][23] = gnubg.board()[1][0])
 ((0, 0, 0, 0, 0, 5, 0, 3, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0), 
 	(0, 0, 0, 0, 0, 5, 0, 3, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0))
 >>> gnubg.posinfo()
