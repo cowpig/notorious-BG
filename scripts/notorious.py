@@ -77,7 +77,42 @@ def get_legal_moves():
 		movelist=get_moves_from_pos(movelist,b2,(dice[1],dice[0]),0,24)
 
 	moves=[]
-	for k,v in movelist:
+	#case for non doubles
+	if len(dice) == 2:
+		for k in movelist:
+			moveone = k
+			if movelist[k] != {}:
+				for k2 in movelist[k]:
+					movetwo = k2
+					#order moveone and movetwo correctly TODO
+					if moveone[0] < movetwo[0]:
+						moves.append((moveone,movetwo))
+					elif moveone[0] > movetwo[0]:
+						moves.append((movetwo,moveone))
+					else:
+						if moveone[1] < movetwo[1]:
+							moves.append((moveone,movetwo))
+						else:
+							moves.append((movetwo,moveone))
+
+	else:
+	#case for doubles:
+		for k in movelist:
+			moveone = k
+			if movelist[k] != {}:
+				for k2 in movelist[k]:
+					movetwo = k2
+					if movelist[k][k2] != {}:
+						for k3 in movelist[k][k2]:
+							movethree = k3
+							if movelist[k][k2][k3] != {}:
+								for k4 in movelist[k][k2][k3]:
+									movefour = k4
+									#order correctly! todo
+									moves.append((moveone,movetwo,movethree,movefour))
+
+
+
 
 	
 	if board[1][24] != 0:
