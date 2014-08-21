@@ -1,5 +1,6 @@
 import gnubg
 import random
+from copy import deepcopy
 
 print "Hello, world"
 
@@ -16,30 +17,45 @@ def new(opponent_type="gnubg"):
 def get_moves_from_pos(movelist,board,dice,numdice,numpos):
 	# if we have reached the end of the board traversal, or if we have reached the end of our dice traversal
 	# then return to previous level of recursion
-	if numpos <= 0 or numdice > len(dice):
+	if numpos <= 0 or numdice > (len(dice) - 1):
 		return movelist
 	else:
 		# if there are pips at this position
 		if board[1][numpos] != 0:
 			# can we take them off the board? (are all pieces in inner board)
 			canTakeOff=bool(not sum(board[1][7:24]))
-			if numpos - d <= 0:
+			if numpos - dice[numdice] <= 0:
 				# if yes and if we are trying to do that, take them off
 				# LATER: DISCARD MOVES THAT TAKE OFF BUT ARE NOT ALLOWED
 				if canTakeOff:
-					move = (numpos, numpos - d)
+					move = (numpos, numpos - dice[numdice])
 					board[1][numpos] -= 1
 				# iterate forwards in dice but not position
-					movelist[move]=get_moves_from_pos(movelist[move],board,dice,numdice+1,24)
+					movelist[move]= {}
+					if len(dice) == 4:
+						movelist[move] = get_moves_from_pos(movelist[move],board,dice,numdice+1,numpos)
+					else:
+						movelist[move] = get_moves_from_pos(movelist[move],board,dice,numdice+1,24)
+					board[1][numpos] += 1
+					return get_moves_from_pos(movelist,board,dice,numdice,numpos-1)
 				else:
 					return get_moves_from_pos(movelist,board,dice,numdice,numpos-1)
 			else:
 				# check no opponent blockage, if not, create move and update board
-				if board[0][24-(numpos - d)] < 2:
-					move = (numpos, numpos - d)
+				if board[0][24-(numpos - dice[numdice])] < 2:
+					move = (numpos, numpos - dice[numdice])
 					board[1][numpos] -= 1
-					board[1][numpos - d] += 1
-				movelist[move] = get_moves_from_pos(movelist[move],board,dice,numdice+1,24)
+					board[1][numpos - dice[numdice]] += 1
+					movelist[move] = {}
+					if len(dice) == 4:
+						movelist[move] = get_moves_from_pos(movelist[move],board,dice,numdice+1,numpos)
+					else:
+						movelist[move] = get_moves_from_pos(movelist[move],board,dice,numdice+1,24)
+					board[1][numpos] += 1
+					board[1][numpos - dice[numdice]] -= 1
+					return get_moves_from_pos(movelist,board,dice,numdice,numpos-1)
+				else:
+					return get_moves_from_pos(movelist,board,dice,numdice,numpos-1)
 		else:
 			#iterate through position if you can't make a move!
 			return get_moves_from_pos(movelist,board,dice,numdice,numpos-1)
@@ -50,20 +66,21 @@ def get_legal_moves():
 	posinfo = gnubg.posinfo()
 	dice = posinfo['dice']
 	board = gnubg.board()
+	b2 = [list(board[0]),list(board[1])]
 	# check for doubles case
-	isDouble = dice[0] == dice[1]
-	#can the board take off pieces? (check after each move)
-	canTakeOff = bool(not sum(board[1][7:24]))
+	if dice[0] == dice[1]:
+		dice = (dice[0], dice[0], dice[0], dice[0])
 
-	for i in range(board[1]):
-		num_position = board[1][i]
-		if num_position != 0:
-			for d in dice:
-				if is_legal(board,p,d):
-					move_one = 
-					return
+	movelist = {}
+	movelist = get_moves_from_pos(movelist,b2,dice,0,24)
+	if len(dice<4):
+		movelist=get_moves_from_pos(movelist,b2,(dice[1],dice[0]),0,24)
 
-	if board[1][24] in player_positions != 0:
+	moves=[]
+	for k,v in movelist:
+
+	
+	if board[1][24] != 0:
 		# bar stuff, implement
 
 	# if doubles, 24/1(3) (5/1)
