@@ -128,6 +128,14 @@ def smart_move():
 	moves = get_legal_moves()
 	# this might be a while
 
+def random_game():
+	new()
+	while not gnubg.posinfo()['gamestate']:
+		gnubg.move(random_move())
+
+	print "Sup Noam!"
+
+
 '''
 dir(gnubg):
 [
