@@ -276,6 +276,7 @@ typedef enum {
     CMARK_ROLLOUT
 } CMark;
 
+// define move !!!!!
 typedef struct {
     int anMove[8];
     positionkey key;
@@ -299,6 +300,7 @@ extern bearoffcontext *pbcOS;
 extern bearoffcontext *pbcTS;
 extern bearoffcontext *apbcHyper[3];
 
+// define movelist !!!!!
 typedef struct {
     unsigned int cMoves;        /* and current move when building list */
     unsigned int cMaxMoves, cMaxPips;
