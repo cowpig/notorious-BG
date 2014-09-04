@@ -1,1 +1,6 @@
 *.pyc
+**.o
+**.Plo
+**.status
+**.a
+autom4te.cache/*

@@ -50,6 +50,12 @@ static PyObject *RolloutContextToPy(const rolloutcontext * rc);
 static PyObject *PythonGnubgID(PyObject * self, PyObject * args);
 
 static PyObject *
+TestFunction() {
+    PyObject * test = PyString_FromString("test works!");
+    return test;
+}
+
+static PyObject *
 BoardToPy(const TanBoard anBoard)
 {
     PyObject *b = PyTuple_New(2);
@@ -820,6 +826,11 @@ PythonParseMove(PyObject * UNUSED(self), PyObject * args)
     return pyMoves;
 }
 
+static PyObject *
+PythonTest(PyObject * UNUSED(self), PyObject * args)
+{
+    return TestFunction();
+}
 
 static PyObject *
 PythonBoard(PyObject * UNUSED(self), PyObject * args)
@@ -2816,6 +2827,9 @@ PythonNavigate(PyObject * UNUSED(self), PyObject * args, PyObject * keywds)
 
 PyMethodDef gnubgMethods[] = {
 
+    {"test", PythonTest, METH_VARARGS,
+     "This is a test."}
+    ,
     {"board", PythonBoard, METH_VARARGS,
      "Get the current board\n"
      "    arguments: none\n"

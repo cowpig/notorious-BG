@@ -2840,7 +2840,6 @@ CompareMovesGeneral(const move * pm0, const move * pm1)
 extern int
 GenerateMoves(movelist * pml, const TanBoard anBoard, int n0, int n1, int fPartial)
 {
-
     int anRoll[4], anMoves[8];
     anRoll[0] = n0;
     anRoll[1] = n1;

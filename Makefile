@@ -53,7 +53,7 @@ am__append_4 = gtkboard.c gtkboard.h gtkgame.c gtkgame.h gtkfile.c gtkfile.h \
 
 am__append_5 = -lsqlite3  
 am__append_6 = -lpthread -ldl -lutil -lm -lpython2.7 
-am__append_7 = -L$(srcdir)/board3d board3d/libboard3d.la -Wl,--export-dynamic -pthread -lgtkglext-x11-1.0 -lgdkglext-x11-1.0 -lGLU -lGL -lXmu -lXt -lSM -lICE -lgtk-x11-2.0 -lpangox-1.0 -lX11 -lgmodule-2.0 -lrt -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lcairo -lpango-1.0 -lfreetype -lfontconfig -lgobject-2.0 -lglib-2.0  
+am__append_7 = -L$(srcdir)/board3d board3d/libboard3d.la -Wl,--export-dynamic -pthread -lgtkglext-x11-1.0 -lgdkglext-x11-1.0 -lGLU -lGL -lXmu -lXt -lSM -lICE -lgtk-x11-2.0 -lpangox-1.0 -lX11 -lgmodule-2.0 -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lcairo -lpango-1.0 -lfontconfig -lgobject-2.0 -lglib-2.0 -lfreetype  
 subdir = .
 DIST_COMMON = README $(am__configure_deps) $(srcdir)/Makefile.am \
 	$(srcdir)/Makefile.in $(srcdir)/config.h.in \
@@ -271,14 +271,14 @@ distuninstallcheck_listfiles = find . -type f -print
 am__distuninstallcheck_listfiles = $(distuninstallcheck_listfiles) \
   | sed 's|^\./|$(prefix)/|' | grep -v '$(infodir)/dir$$'
 distcleancheck_listfiles = find . -type f -print
-ACLOCAL = ${SHELL} /home/max/gnubg-1.02.000/missing --run aclocal-1.11
+ACLOCAL = ${SHELL} /home/max/notorious-BG/missing --run aclocal-1.11
 AMTAR = $${TAR-tar}
 AM_CFLAGS = -g -O2 -DG_DISABLE_ASSERT
 AM_YFLAGS = -d
 AR = ar
-AUTOCONF = ${SHELL} /home/max/gnubg-1.02.000/missing --run autoconf
-AUTOHEADER = ${SHELL} /home/max/gnubg-1.02.000/missing --run autoheader
-AUTOMAKE = ${SHELL} /home/max/gnubg-1.02.000/missing --run automake-1.11
+AUTOCONF = ${SHELL} /home/max/notorious-BG/missing --run autoconf
+AUTOHEADER = ${SHELL} /home/max/notorious-BG/missing --run autoheader
+AUTOMAKE = ${SHELL} /home/max/notorious-BG/missing --run automake-1.11
 AWK = mawk
 CAIRO_CFLAGS = -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12  
 CAIRO_LIBS = -lcairo  
@@ -318,11 +318,11 @@ GMOFILES =  da.gmo de.gmo es.gmo en_US.gmo ja.gmo it.gmo fr.gmo is.gmo tr.gmo cs
 GMSGFMT = /usr/bin/msgfmt
 GREP = /bin/grep
 GTHREAD_CFLAGS = -pthread -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include  
-GTHREAD_LIBS = -pthread -lgthread-2.0 -lrt -lglib-2.0  
-GTKGLEXT_CFLAGS = -pthread -I/usr/include/gtk-2.0 -I/usr/lib/x86_64-linux-gnu/gtk-2.0/include -I/usr/include/pango-1.0 -I/usr/include/gio-unix-2.0/ -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12 -I/usr/include/atk-1.0 -I/usr/include/gtkglext-1.0 -I/usr/lib/gtkglext-1.0/include  
-GTKGLEXT_LIBS = -Wl,--export-dynamic -pthread -lgtkglext-x11-1.0 -lgdkglext-x11-1.0 -lGLU -lGL -lXmu -lXt -lSM -lICE -lgtk-x11-2.0 -lpangox-1.0 -lX11 -lgmodule-2.0 -lrt -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lcairo -lpango-1.0 -lfreetype -lfontconfig -lgobject-2.0 -lglib-2.0  
-GTK_CFLAGS = -pthread -I/usr/include/gtk-2.0 -I/usr/lib/x86_64-linux-gnu/gtk-2.0/include -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/pango-1.0 -I/usr/include/gio-unix-2.0/ -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12  
-GTK_LIBS = -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lcairo -lpango-1.0 -lfreetype -lfontconfig -lgobject-2.0 -lglib-2.0  
+GTHREAD_LIBS = -pthread -lgthread-2.0 -lglib-2.0  
+GTKGLEXT_CFLAGS = -pthread -I/usr/include/gtk-2.0 -I/usr/lib/x86_64-linux-gnu/gtk-2.0/include -I/usr/include/pango-1.0 -I/usr/include/gio-unix-2.0/ -I/usr/include/freetype2 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/libpng12 -I/usr/include/atk-1.0 -I/usr/include/harfbuzz -I/usr/include/gtkglext-1.0 -I/usr/lib/gtkglext-1.0/include  
+GTKGLEXT_LIBS = -Wl,--export-dynamic -pthread -lgtkglext-x11-1.0 -lgdkglext-x11-1.0 -lGLU -lGL -lXmu -lXt -lSM -lICE -lgtk-x11-2.0 -lpangox-1.0 -lX11 -lgmodule-2.0 -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lcairo -lpango-1.0 -lfontconfig -lgobject-2.0 -lglib-2.0 -lfreetype  
+GTK_CFLAGS = -pthread -I/usr/include/gtk-2.0 -I/usr/lib/x86_64-linux-gnu/gtk-2.0/include -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/pango-1.0 -I/usr/include/gio-unix-2.0/ -I/usr/include/freetype2 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/libpng12 -I/usr/include/harfbuzz  
+GTK_LIBS = -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lcairo -lpango-1.0 -lfontconfig -lgobject-2.0 -lglib-2.0 -lfreetype  
 INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
@@ -344,7 +344,7 @@ LIPO =
 LN_S = ln -s
 LSB_CHECK = yes
 LTLIBOBJS = 
-MAKEINFO = ${SHELL} /home/max/gnubg-1.02.000/missing --run makeinfo
+MAKEINFO = ${SHELL} /home/max/notorious-BG/missing --run makeinfo
 MANIFEST_TOOL = :
 MKDIR_P = /bin/mkdir -p
 MKINSTALLDIRS = ./mkinstalldirs
@@ -368,7 +368,7 @@ PANGOCAIRO_LIBS = -lpangocairo-1.0 -lpango-1.0 -lcairo -lgobject-2.0 -lglib-2.0
 PATH_SEPARATOR = :
 PKG_CONFIG = /usr/bin/pkg-config
 PKG_CONFIG_LIBDIR = 
-PKG_CONFIG_PATH = /home/max/local/lib/pkgconfig/:/home/max/local/lib/pkg-config/
+PKG_CONFIG_PATH = 
 POFILES =  da.po de.po es.po en_US.po ja.po it.po fr.po is.po tr.po cs.po ro.po ru.po
 POSUB = po
 PO_IN_DATADIR_FALSE = 
@@ -396,10 +396,10 @@ XGETTEXT = /usr/bin/xgettext
 XSLTPROC = xsltproc
 YACC = bison -y
 YFLAGS = 
-abs_builddir = /home/max/gnubg-1.02.000
-abs_srcdir = /home/max/gnubg-1.02.000
-abs_top_builddir = /home/max/gnubg-1.02.000
-abs_top_srcdir = /home/max/gnubg-1.02.000
+abs_builddir = /home/max/notorious-BG
+abs_srcdir = /home/max/notorious-BG
+abs_top_builddir = /home/max/notorious-BG
+abs_top_srcdir = /home/max/notorious-BG
 ac_ct_AR = ar
 ac_ct_CC = gcc
 ac_ct_DUMPBIN = 
@@ -428,7 +428,7 @@ host_vendor = unknown
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/max/gnubg-1.02.000/install-sh
+install_sh = ${SHELL} /home/max/notorious-BG/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -461,8 +461,8 @@ localeloc = -DLOCALEDIR=\"$(localedir)\"
 #localeloc = -DLOCALEDIR=\"locale\" 
 AM_CPPFLAGS = -I$(srcdir)/lib -I$(srcdir)/board3d -I$(srcdir)/pixmaps \
 	$(localeloc) -I/usr/include/freetype2   -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include   -I/usr/include/libpng12   \
-	-pthread -I/usr/include/gtk-2.0 -I/usr/lib/x86_64-linux-gnu/gtk-2.0/include -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/pango-1.0 -I/usr/include/gio-unix-2.0/ -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   -pthread -I/usr/include/pango-1.0 -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   \
-	-pthread -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include   -pthread -I/usr/include/gtk-2.0 -I/usr/lib/x86_64-linux-gnu/gtk-2.0/include -I/usr/include/pango-1.0 -I/usr/include/gio-unix-2.0/ -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12 -I/usr/include/atk-1.0 -I/usr/include/gtkglext-1.0 -I/usr/lib/gtkglext-1.0/include    \
+	-pthread -I/usr/include/gtk-2.0 -I/usr/lib/x86_64-linux-gnu/gtk-2.0/include -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/pango-1.0 -I/usr/include/gio-unix-2.0/ -I/usr/include/freetype2 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/libpng12 -I/usr/include/harfbuzz   -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   -pthread -I/usr/include/pango-1.0 -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   \
+	-pthread -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include   -pthread -I/usr/include/gtk-2.0 -I/usr/lib/x86_64-linux-gnu/gtk-2.0/include -I/usr/include/pango-1.0 -I/usr/include/gio-unix-2.0/ -I/usr/include/freetype2 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/libpng12 -I/usr/include/atk-1.0 -I/usr/include/harfbuzz -I/usr/include/gtkglext-1.0 -I/usr/lib/gtkglext-1.0/include    \
 	$(am__append_1) $(am__append_2) \
 	-DAC_DOCDIR='"$(datadir)/doc/gnubg/"' \
 	-DAC_DATADIR='"$(datadir)"' \
@@ -491,8 +491,8 @@ gnubg_SOURCES = analysis.c analysis.h backgammon.h bearoff.c \
 
 #
 #
-gnubg_LDADD = -L$(srcdir)/lib lib/libevent.la -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lcairo -lpango-1.0 -lfreetype -lfontconfig -lgobject-2.0 -lglib-2.0   -lpng12   \
-	-lcairo   -lpangocairo-1.0 -lpango-1.0 -lcairo -lgobject-2.0 -lglib-2.0   -pthread -lgthread-2.0 -lrt -lglib-2.0    \
+gnubg_LDADD = -L$(srcdir)/lib lib/libevent.la -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lcairo -lpango-1.0 -lfontconfig -lgobject-2.0 -lglib-2.0 -lfreetype   -lpng12   \
+	-lcairo   -lpangocairo-1.0 -lpango-1.0 -lcairo -lgobject-2.0 -lglib-2.0   -pthread -lgthread-2.0 -lglib-2.0    \
 	-lfreetype   -lglib-2.0   -lpng12    \
 	$(OTHER_LIBS) $(am__append_5) $(am__append_6) $(am__append_7)
 #gnubg_LDFLAGS = -mwindows
@@ -506,13 +506,13 @@ UTILSOURCES = eval.h eval.c positionid.h positionid.c \
 	mec.h mec.c util.c util.h
 
 makebearoff_SOURCES = makebearoff.c $(UTILSOURCES)
-makebearoff_LDADD = -Llib lib/libevent.la  -lglib-2.0   -pthread -lgthread-2.0 -lrt -lglib-2.0  
+makebearoff_LDADD = -Llib lib/libevent.la  -lglib-2.0   -pthread -lgthread-2.0 -lglib-2.0  
 makehyper_SOURCES = makehyper.c $(UTILSOURCES)
-makehyper_LDADD = -Llib lib/libevent.la -lglib-2.0   -pthread -lgthread-2.0 -lrt -lglib-2.0  
+makehyper_LDADD = -Llib lib/libevent.la -lglib-2.0   -pthread -lgthread-2.0 -lglib-2.0  
 bearoffdump_SOURCES = bearoffdump.c $(UTILSOURCES)
-bearoffdump_LDADD = -Llib lib/libevent.la -lglib-2.0   -pthread -lgthread-2.0 -lrt -lglib-2.0  
+bearoffdump_LDADD = -Llib lib/libevent.la -lglib-2.0   -pthread -lgthread-2.0 -lglib-2.0  
 makeweights_SOURCES = makeweights.c
-makeweights_LDADD = -Llib lib/libevent.la -lglib-2.0   -pthread -lgthread-2.0 -lrt -lglib-2.0  
+makeweights_LDADD = -Llib lib/libevent.la -lglib-2.0   -pthread -lgthread-2.0 -lglib-2.0  
 
 #
 #
